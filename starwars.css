@@ -1,0 +1,25 @@
+20 lines (16 sloc)  172 Bytes
+  
+// font news gothic
+
+li
+{
+    font-size: 30px;
+}
+
+.info
+{
+    position: absolute;
+    left: 350px;
+    width: 700px;
+}
+
+body
+{
+background-color: #black;
+color: #2c3e50;
+text-align: center;
+    
+    // color issue
+    
+}
