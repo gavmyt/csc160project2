@@ -1,6 +1,6 @@
-var starPromise = d3.json("https://ghibliapi.herokuapp.com/films");
+var starPromise = d3.json("https://swapi.co/api/films/?format=json")
 var printTitles = function(starData)
-{
+{                                                                    //starData.results[0].title
 d3.select(".titles")
 .append("ol")
 .selectAll("li")
@@ -22,7 +22,8 @@ starPromise.then(
 function(starData)
 {
 printTitles(starData);
-console.log("starData", movieData);
+console.log (starData.results[0].title);
+console.log (starData);
 },
 );
 
