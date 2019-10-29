@@ -1,25 +1,124 @@
-20 lines (16 sloc)  172 Bytes
-  
-// font news gothic
+body
+{
+background-color: black;
 
+
+    
+    
+}
+
+
+
+.ol
+{
+    background-color: aqua
+}
+
+h1
+{
+    
+    text-align: center;
+}
+p
+{
+    vertical-align: text-bottom;
+    color: white ;
+}
+
+  ol li:first-child
+    {
+        background-image: url(starwarsimages/newhope-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        margin: 25px;
+        text-align: center;
+        color: white;
+        font-size: 12px;
+     }
+ ol li:nth-child(2)
+{
+        background-image: url(starwarsimages/attackoftheclones-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 8px;
+    margin: 25px;
+    
+}
+ol li:nth-child(3)
+{
+        background-image: url(starwarsimages/phantommenace-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 7px;
+    margin: 25px;
+}
+ol li:nth-child(4)
+{
+        background-image: url(starwarsimages/revengeofthesith-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 8px;
+    margin: 25px;
+}
+ol li:nth-child(5)
+{
+        background-image: url(starwarsimages/rotj-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 8px;
+    margin: 25px;
+}
+ol li:nth-child(6)
+{
+        background-image: url(starwarsimages/empirestrikesback-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 8px;
+    margin: 25px;
+}
+ol li:nth-child(7)
+{
+        background-image: url(starwarsimages/forceawakens-resize.jpg);
+        height: 300px;
+        width: 200px;
+        display:inline-block;
+        border:3px solid #f9d71c;
+        text-align: center;
+        color: white;
+       font-size: 8px;
+    margin: 25px;
+}
 li
 {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 .info
 {
-    position: absolute;
-    left: 350px;
+    color: #f9d71c;
+    left: 500px;
     width: 700px;
 }
 
-body
-{
-background-color: #black;
-color: #2c3e50;
-text-align: center;
-    
-    // color issue
-    
-}

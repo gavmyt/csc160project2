@@ -1,28 +1,38 @@
 var starPromise = d3.json("https://swapi.co/api/films/?format=json")
-var printTitles = function(starData)
+var printTitles = function(starsData)
 {                                                                    //starData.results[0].title
 d3.select(".titles")
 .append("ol")
 .selectAll("li")
-.data(starData)
+.data(starsData)
 .enter()
 .append("li")
 .text(function(d) { return d.title})
 .on("click", function(d) { printData(d) });
 }
-var printData = function(movie)
+var printData = function(stardata)
 {
-d3.select(".data *").remove("ol");
+// Promise.all(starPromise).then(printData(stardata.results[0].name);
+
+d3.select(".data *").remove("ul");
 d3.select(".data").append("div").attr("class", "info");
-d3.select(".info").append("ol").attr("class", "infoList");
-d3.select(".infoList").append("li").text(movie.producer);
-d3.select(".infoList").append("li").text(movie.director);    
+d3.select(".info").append("ul").attr("class", "infoList");
+d3.select(".infoList").append("li").text(stardata.release_date);
+d3.select(".infoList").append("li").text(stardata.characters); 
+d3.select(".infoList").append("li").text(stardata.director);
+d3.select(".infoList").append("li").text(stardata.producer);
+d3.select(".infoList").append("li").text(stardata.opening_crawl);
+
+
+
 }
 starPromise.then(
 function(starData)
+    
+    
 {
-printTitles(starData);
-console.log (starData.results[0].title);
+printTitles(starData.results);
+
 console.log (starData);
 },
 );
