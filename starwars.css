@@ -8,8 +8,12 @@ background-color: black;
 }
 
 
+{
+    
+    
+}
 
-.ol
+
 {
     background-color: aqua
 }
@@ -110,6 +114,9 @@ ol li:nth-child(7)
        font-size: 8px;
     margin: 25px;
 }
+
+ul li:nth-child(2)
+{}
 li
 {
     font-size: 35px;
