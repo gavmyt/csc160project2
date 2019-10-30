@@ -10,18 +10,33 @@ d3.select(".titles")
 .text(function(d) { return d.title})
 .on("click", function(d) { printData(d) });
 }
-var printData = function(stardata)
-{
-// Promise.all(starPromise).then(printData(stardata.results[0].name);
+var printData = function(film)
+{ console.log(film.characters);
+ 
+ var chars = film.characters;
+ console.log(chars);
+ 
+ var charPromise = chars.map(function(chars)
+        {
+                 console.log(charPromise);
+                 return d3.json(chars);
+}   )
+                
+Promise.all(promises).then(printData(function(values)
+ {
+     console.log("values",values);
+     d3.select()
+     
+ }))
 
 d3.select(".data *").remove("ul");
 d3.select(".data").append("div").attr("class", "info");
 d3.select(".info").append("ul").attr("class", "infoList");
-d3.select(".infoList").append("li").text(stardata.release_date);
-d3.select(".infoList").append("li").text(stardata.characters); 
-d3.select(".infoList").append("li").text(stardata.director);
-d3.select(".infoList").append("li").text(stardata.producer);
-d3.select(".infoList").append("li").text(stardata.opening_crawl);
+d3.select(".infoList").append("li").text(film.release_date);
+d3.select(".infoList").append("li").text(film.characters); 
+d3.select(".infoList").append("li").text(film.director);
+d3.select(".infoList").append("li").text(film.producer);
+d3.select(".infoList").append("li").text(film.opening_crawl);
 
 
 
