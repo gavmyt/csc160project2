@@ -16,10 +16,41 @@ d3.select(".titles")
 
 var printData = function(film)
 {
+    
+    
+    
+    
+    
+    
+    
     console.log(film);
     var chars = film.characters;
-    console.log(film,chars);
+    console.log(film.characters);
     
+     var charPromise = chars.map(function(chars)
+    {
+                 console.log(chars);
+                 return d3.json(chars);
+    })
+               
+    Promise.all(charPromise).then(function(starvalue)
+    {
+    console.log(starvalue[0].name);
+    console.log(starvalue[5].name);
+     console.log("starvalue",starvalue);
+     d3.select("ul li:nth-child(5)")
+       // .on("click", function(d) { console.log(d) printData(d) })
+     
+        .append("ul")
+        .attr("id","bob")
+        .selectAll("li")
+        .data(starvalue)
+        .enter()
+        .append("li")
+        .text(function(d) { return d.name})
+      
+    })
+
     
     d3.select(".data *").remove("ul");
     
@@ -55,34 +86,12 @@ d3.select(".accumulatedknowledge")
     .append("li")
     .attr("id","people")
     .text("Characters", film.characters)
-    .on("click", function(d) { console.log(d) 
-                        return  starvalue });    
     
-    var charPromise = chars.map(function(chars)
-    {
-                 console.log(chars);
-                 return d3.json(chars);
-    })
-                
-    Promise.all(charPromise).then(function(starvalue)
-    {
-    console.log(starvalue[0].name);
-    console.log(starvalue[5].name);
-     console.log("starvalue",starvalue);
-     d3.select("ul li:nth-child(5)")
-       // .on("click", function(d) { console.log(d) printData(d) })
-     
-        .append("ul")
-        .attr("id","bob")
-        .selectAll("li")
-        .data(starvalue)
-        .enter()
-        .append("li")
-        .text(function(d) { return d.name})
-       // .on("click", function(d) { console.log(d) 
-                       //   chars(d) });
-    })
+    
 
+    
+
+   
 
 
 
