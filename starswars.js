@@ -2,13 +2,13 @@ var starPromise = d3.json("https://swapi.co/api/films/?format=json")
 var printTitles = function(starsData)
 {                                                                    
 d3.select(".titles")
-.append("ol")
-.selectAll("li")
-.data(starsData)
-.enter()
-.append("li")
-.text(function(d) { return d.title})
-.on("click", function(d) { console.log(d) 
+    .append("ol")
+    .selectAll("li")
+    .data(starsData)
+    .enter()
+    .append("li")
+    .text(function(d) { return d.title})
+    .on("click", function(d) { console.log(d) 
                           printData(d) });
     
 }
@@ -22,13 +22,41 @@ var printData = function(film)
     
     
     d3.select(".data *").remove("ul");
-d3.select(".data").append("div").attr("class", "info");
-d3.select(".info").append("ul").attr("class", "infoList");
-d3.select(".infoList").append("li").text(film.opening_crawl);
-d3.select(".infoList").append("li").text(film.release_date);
-d3.select(".infoList").append("li").text("Characters", film.characters); 
-d3.select(".infoList").append("li").text("Director: " + film.director);
-d3.select(".infoList").append("li").text("Producer(s): " + film.producer);
+    
+d3.select(".data")
+    .append("div")
+    .attr("class", "info");
+    
+d3.select(".info")
+    .append("ul")
+    .attr("class", "accumulatedknowledge");
+    
+d3.select(".accumulatedknowledge")
+    .append("li")
+    .attr("id","crawl")
+    .text(film.opening_crawl);
+    
+d3.select(".accumulatedknowledge")
+    .append("li")
+    .attr("id","rd")
+    .text("Release Date: " + film.release_date);
+    
+d3.select(".accumulatedknowledge")
+    .append("li")
+    .attr("id","dir")
+    .text("Director: " + film.director);
+    
+d3.select(".accumulatedknowledge")
+    .append("li")
+    .attr("id","prod")
+    .text("Producer(s): " + film.producer);
+    
+d3.select(".accumulatedknowledge")
+    .append("li")
+    .attr("id","people")
+    .text("Characters", film.characters)
+    .on("click", function(d) { console.log(d) 
+                        return  starvalue });    
     
     var charPromise = chars.map(function(chars)
     {
@@ -36,22 +64,23 @@ d3.select(".infoList").append("li").text("Producer(s): " + film.producer);
                  return d3.json(chars);
     })
                 
-    Promise.all(charPromise).then(function(values)
+    Promise.all(charPromise).then(function(starvalue)
     {
-    console.log(values[0].name);
-    console.log(values[5].name);
-     console.log("values",values);
-     d3.select("ul li:nth-child(3)")
-        .on("click", function(d) { console.log(d) 
-                          printData(d) })
+    console.log(starvalue[0].name);
+    console.log(starvalue[5].name);
+     console.log("starvalue",starvalue);
+     d3.select("ul li:nth-child(5)")
+       // .on("click", function(d) { console.log(d) printData(d) })
      
         .append("ul")
+        .attr("id","bob")
         .selectAll("li")
-        .data(values)
+        .data(starvalue)
         .enter()
         .append("li")
         .text(function(d) { return d.name})
-
+       // .on("click", function(d) { console.log(d) 
+                       //   chars(d) });
     })
 
 

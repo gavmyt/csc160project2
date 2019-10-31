@@ -2,7 +2,7 @@ body
 {
 background-color: black;
 
-
+width: 100%;
     
     
 }
@@ -28,6 +28,8 @@ p
     vertical-align: text-bottom;
     color: white ;
 }
+
+
 
   ol li:first-child
     {
@@ -115,17 +117,57 @@ ol li:nth-child(7)
     margin: 25px;
 }
 
+
+
 ul li:nth-child(2)
 {}
 li
 {
+    
     font-size: 35px;
+}
+
+#crawl
+{
+  list-style: none;
+      margin-bottom: 50px;
+    text-align: center;
+}
+
+#rd
+{
+  list-style: url(starwarsimages/lightsaberresize.png);
+      
+}
+
+#dir
+{
+  list-style: url(starwarsimages/lightsaberresize.png);
+      
+}
+
+#prod
+{
+  list-style: url(starwarsimages/lightsaberresize.png);
+      
+}
+
+#people
+{
+  list-style: url(starwarsimages/lightsaberresize.png);
+      
+}
+#bob
+{
+    list-style:disc;
+
+        
 }
 
 .info
 {
     color: #f9d71c;
-    left: 500px;
-    width: 700px;
+  
+    width: 100%;
 }
 
